@@ -1,6 +1,6 @@
 # Ultimate SRE Resource Hub
 
-Welcome to the **Ultimate SRE Resource Hub**, your one-stop GitHub repository for mastering Site Reliability Engineering (SRE). Whether you're a beginner, transitioning from another role, or a seasoned SRE aiming to level up, this guide has it all: clear explanations, practical tools, career advice, real-world examples, and community resources. Per your feedback, I’ve included in-depth sections on Python/Go proficiency and system design for SRE interviews, while enhancing every part for maximum value.
+Welcome to the **Ultimate SRE Resource Hub**, your one-stop GitHub repository for mastering Site Reliability Engineering (SRE). Whether you're a beginner, transitioning from another role, or a seasoned SRE aiming to level up, this guide has it all: clear explanations, practical tools, career advice, real-world examples, and community resources. This updated version retains all the original content while adding the Google DevOps certification, DevSecOps as a career path, free Google SRE book links, and a Coursera course, with further improvements for clarity and value.
 
 ---
 
@@ -16,6 +16,7 @@ Welcome to the **Ultimate SRE Resource Hub**, your one-stop GitHub repository fo
    - [System Design](#system-design)
 8. [Best Practices](#best-practices)
 9. [Career Growth](#career-growth)
+   - [DevSecOps as a Career Path](#devsecops-as-a-career-path)
 10. [Real-World Examples](#real-world-examples)
 11. [Community Connections](#community-connections)
 12. [Beginner’s Roadmap](#beginners-roadmap)
@@ -118,7 +119,7 @@ SREs rely on a robust toolkit. Here’s a curated list with practical uses:
 Level up with these picks:
 
 ### Books
-- **Site Reliability Engineering** (Google) - The SRE bible. [O’Reilly](https://www.oreilly.com/library/view/site-reliability-engineering/9781491929117/).
+- **Site Reliability Engineering** (Google) - The SRE bible. [Free Online](https://sre.google/books/).
 - **The DevOps Handbook** - Links SRE to DevOps.
 - **Seeking SRE** - Real-world SRE stories.
 
@@ -146,6 +147,10 @@ Certifications boost credibility, but hands-on experience is king. Top picks:
 3. **Terraform Associate**  
    - Focus: Infrastructure automation.  
    - Why: IaC essential. [HashiCorp](https://www.hashicorp.com/certification/terraform-associate).
+4. **Google Cloud Professional DevOps Engineer**  
+   - Focus: DevOps and SRE on Google Cloud.  
+   - Why: Validates skills in cloud-native reliability and automation.  
+   - **Preparation**: [Coursera: SRE and DevOps Engineer with Google Cloud](https://www.coursera.org/professional-certificates/sre-devops-engineer-google-cloud).
 
 **Note**: Pair certs with a portfolio (e.g., a Terraform-deployed app) for impact.
 
@@ -222,6 +227,25 @@ From junior to leader:
 - **Roles**: Progress to senior SRE, architect, or manager.
 - **Resources**: [SRE Career Path](https://www.infracloud.io/blogs/career-path-to-senior-sre/).
 
+### DevSecOps as a Career Path
+**What is DevSecOps?**  
+DevSecOps integrates security into the DevOps process, making security a shared responsibility across development, operations, and security teams. It ensures that security is embedded from the start of the software development lifecycle.
+
+**Why Pursue DevSecOps?**  
+- **Growing Demand**: As security becomes a priority, DevSecOps roles are increasingly sought after.
+- **Versatile Skills**: Combines development, operations, and security expertise.
+- **Impact**: Helps deliver secure software faster by reducing vulnerabilities.
+- **Career Opportunities**: Leads to roles like DevSecOps Engineer, Security Architect, or Cloud Security Specialist.
+
+**How to Get Started**:  
+1. Learn DevOps and SRE basics (see resources above).
+2. Study security concepts (e.g., secure coding, threat modeling).
+3. Explore tools like Snyk, OWASP ZAP, and Docker security features.
+4. Consider certifications like Certified Kubernetes Security Specialist (CKS).
+5. Build projects that integrate security into CI/CD pipelines.
+
+**Learn More**: [DevSecOps Guide](https://www.devsecops.org/) | [Google's Building Secure & Reliable Systems](https://sre.google/books/).
+
 ---
 
 ## Real-World Examples
@@ -272,9 +296,5 @@ Make this better:
 1. Fork the repo.
 2. Add resources or fixes.
 3. Submit a pull request with details.
-
----
-
-*Last Updated: March 15, 2025*
 
 ---
