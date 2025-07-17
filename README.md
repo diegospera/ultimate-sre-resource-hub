@@ -1,10 +1,27 @@
 # Ultimate SRE Resource Hub
 
-Welcome to the **Ultimate SRE Resource Hub**, your one-stop GitHub repository for mastering Site Reliability Engineering (SRE). Whether you're a beginner, transitioning from another role, or a seasoned SRE aiming to level up, this guide has it all: clear explanations, practical tools, career advice, real-world examples, and community resources. This updated version retains all the original content while adding the Google DevOps certification, DevSecOps as a career path, free Google SRE book links, and a Coursera course, with further improvements for clarity and value.
+![GitHub stars](https://img.shields.io/github/stars/yourusername/ultimate-sre-resource-hub?style=social) ![GitHub forks](https://img.shields.io/github/forks/yourusername/ultimate-sre-resource-hub?style=social) ![License](https://img.shields.io/github/license/yourusername/ultimate-sre-resource-hub) ![Last Commit](https://img.shields.io/github/last-commit/yourusername/ultimate-sre-resource-hub)
+
+Welcome to the **Ultimate SRE Resource Hub**, the definitive GitHub repository for mastering Site Reliability Engineering (SRE). This repo is designed to be a comprehensive, starred-worthy resource for SREs worldwide—packed with deep insights, practical tools, career guidance, and real-world examples. Whether you're starting out, transitioning from DevOps, or a principal SRE tackling hyperscale challenges, you'll find value here.
+
+This update integrates **The SRE Lexicon: An Architectural Blueprint for a Definitive Resource Hub**—a massive, detailed guide spanning philosophy, tools, human factors, practices, future trends, and learning annexes. I've expanded sections with key excerpts, tables, checklists, and references from the Lexicon to make this README a standalone powerhouse, while linking to the full [SRE_Lexicon.md](SRE_Lexicon.md) for the complete 20+ section deep dive.
+
+Star 🌟 if this helps you level up—let's make this the go-to SRE repo!
+
+---
+
+## Why This Repo?
+
+- **Depth & Breadth**: Covers everything from SLOs and error budgets to Chaos Engineering, FinOps, and psychological safety.
+- **Actionable Content**: Includes checklists (e.g., PRR template), career ladders, bias management tables, and interview challenges.
+- **Updated with Latest**: Google DevOps cert, DevSecOps paths, free SRE books, Coursera courses, and real outage case studies.
+- **Elite SRE Perspective**: Curated with top-tier expertise for building resilient, scalable systems.
+- **Community Focus**: Contribute to expand it—add your insights!
 
 ---
 
 ## Table of Contents
+
 1. [What is SRE?](#what-is-sre)
 2. [SRE vs. DevOps vs. Platform Engineering](#sre-vs-devops-vs-platform-engineering)
 3. [Core Principles of SRE](#core-principles-of-sre)
@@ -27,274 +44,187 @@ Welcome to the **Ultimate SRE Resource Hub**, your one-stop GitHub repository fo
 
 ## What is SRE?
 
-Site Reliability Engineering (SRE) blends software engineering with operations to build reliable, scalable systems. SREs use code, automation, and proactive strategies to keep services running smoothly while enabling rapid innovation.
+Site Reliability Engineering (SRE) is a discipline that applies software engineering principles to operations, treating infrastructure and operations as software problems. Originating at Google in 2003 by Ben Treynor Sloss, SRE focuses on creating scalable, reliable systems through automation and data-driven practices.
 
-- **In Simple Terms**: SRE is "ops with a developer’s mindset"—writing software to prevent outages and keep systems humming.
-- **Origins**: Pioneered at Google in 2003 by Ben Treynor Sloss to manage massive systems. Now adopted by Netflix, Microsoft, Spotify, and more.
+From the Lexicon ([Section 1](SRE_Lexicon.md#section-1-defining-site-reliability-engineering-beyond-ops-with-software-engineers)):
+
+- **Core Definition**: SRE maintains availability, performance, and efficiency to enhance customer experience and enable safe innovation. It's not just "keeping the lights on"—it's a value-generating function that automates toil and quantifies reliability via SLOs and error budgets.
+- **SRE vs. DevOps**: SRE is a prescriptive implementation of DevOps, adding tools like error budgets for shared ownership.
+- **Strategic Value**: Transforms reliability into a business competency, saving costs through efficiency and risk management.
+
+- **In Simple Terms**: SRE is ops with a developer's mindset—coding to prevent outages.
 - **Learn More**: [Google SRE Homepage](https://sre.google/) | [History of SRE](https://www.enov8.com/blog/the-history-of-sre/).
 
 ---
 
 ## SRE vs. DevOps vs. Platform Engineering
 
-Understanding SRE means seeing how it differs from and overlaps with DevOps and Platform Engineering. Here’s a clear breakdown:
+SRE differentiates by focusing on engineering practices for reliability, while overlapping with DevOps culture and platform engineering tools.
 
-### Comparison Table
+### Comparison Table (Expanded from Lexicon Insights)
 
-| **Role**             | **Primary Focus**                              | **Key Responsibilities**                          | **Unique Traits**                          |
-|-----------------------|-----------------------------------------------|--------------------------------------------------|--------------------------------------------|
-| **SRE**              | System reliability and performance            | - Define SLOs and error budgets<br>- Automate toil<br>- Respond to incidents<br>- Optimize system health | - Engineering-first approach to ops<br>- Balances reliability with feature velocity |
-| **DevOps**           | Collaboration and delivery speed              | - Build CI/CD pipelines<br>- Foster dev-ops teamwork<br>- Automate deployments<br>- Improve release cycles | - Cultural shift to break silos<br>- Emphasis on end-to-end delivery |
-| **Platform Engineering** | Internal platforms for developers          | - Create self-service tools<br>- Manage infrastructure<br>- Enhance developer experience<br>- Maintain APIs | - Focus on building reusable platforms<br>- Enables others to deploy easily |
+| **Role**                 | **Primary Focus**                         | **Key Responsibilities**                                                  | **Unique Traits**                             | **Lexicon Tie-In**                                                                                                 |
+| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **SRE**                  | Reliability through engineering           | Define SLOs/error budgets, automate toil, incident response, embrace risk | Quantifies unreliability; balances innovation | [Section 1 & 3](SRE_Lexicon.md#section-1-defining-site-reliability-engineering-beyond-ops-with-software-engineers) |
+| **DevOps**               | Collaboration for fast, reliable delivery | CI/CD pipelines, silo-breaking, automation                                | Cultural philosophy; end-to-end ownership     | SRE operationalizes DevOps                                                                                         |
+| **Platform Engineering** | Internal platforms for dev productivity   | Self-service IaC, APIs, DX tools                                          | Abstracts complexity; enables scalability     | Supports SRE topologies                                                                                            |
 
-### Key Differences
-- **SRE**: Focuses on reliability through software engineering (e.g., 99.99% uptime). Hands-on with automation and incidents. *Example*: Coding a tool to auto-restart failed services.
-- **DevOps**: A philosophy to unite dev and ops, speeding up delivery. Broad, cultural focus with tools like CI/CD. *Example*: Setting up daily deployment pipelines.
-- **Platform Engineering**: Builds internal platforms (e.g., Kubernetes with dashboards) for devs and SREs. Empowers others with infrastructure. *Example*: A portal to spin up resources.
+- **Key Differences**: SRE treats ops as software (e.g., automating releases); DevOps is cultural; Platform Engineering builds foundations (e.g., Kubernetes platforms).
+- **Overlaps**: All emphasize automation and observability.
+- **How They Fit**: DevOps sets culture, Platform provides tools, SRE ensures reliability.
 
-### Overlaps
-- **Automation**: SREs automate toil, DevOps automates pipelines, Platform Engineers automate provisioning.
-- **Collaboration**: SREs and DevOps break silos; Platform Engineers enable it with tools.
-- **Monitoring**: All use observability—SREs for reliability, DevOps for deployments, Platform Engineers for platforms.
-
-### How They Fit Together
-In a tech ecosystem:
-- **DevOps** sets the culture and pipeline for fast delivery.
-- **Platform Engineering** provides the foundation (e.g., a cloud-native platform).
-- **SRE** ensures everything stays reliable, leveraging the platform.
-
-**Dive Deeper**: [SRE vs. DevOps](https://www.atlassian.com/blog/devops/sre-vs-devops) | [Platform Engineering 101](https://www.platformengineering.org/).
+- **Dive Deeper**: [SRE vs. DevOps](https://www.atlassian.com/blog/devops/sre-vs-devops) | [Platform Engineering 101](https://www.platformengineering.org/).
 
 ---
 
 ## Core Principles of SRE
 
-SRE is built on these pillars:
+From [Section 2](SRE_Lexicon.md#section-2-the-foundational-pillars-of-sre-a-deep-dive-into-the-seven-core-principles), the seven interconnected principles:
 
-1. **Service Level Objectives (SLOs)**: Measurable reliability targets (e.g., "99.95% availability"). Defines "good enough."
-2. **Error Budgets**: Acceptable downtime based on SLOs (e.g., 43 minutes/month for 99.9%). Balances reliability and innovation.
-3. **Automation**: Replaces manual "toil" with scripts/tools to save time and reduce errors.
-4. **Blameless Culture**: Focuses on fixing systems, not pointing fingers, after incidents.
-5. **Observability**: Deep system understanding via logs, metrics, and traces—beyond basic monitoring.
+1. **Embracing Risk**: Quantify and manage risk, not eliminate it—use error budgets.
+2. **Service Level Objectives (SLOs)**: Measurable, user-centric targets (e.g., 99.9% availability).
+3. **Eliminating Toil**: Automate manual, repetitive work; cap at 50% time.
+4. **Monitoring**: Three pillars—metrics, logs, traces—for observability.
+5. **Automation**: Primary tool for scaling and consistency.
+6. **Release Engineering**: Fast, safe processes like canaries.
+7. **Simplicity**: Reduce complexity to boost reliability.
 
-**Explore More**: [SLO Basics](https://www.blameless.com/blog/sre-principles) | [Google SRE Book](https://sre.google/sre-book/part-II-principles/).
+These form a holistic framework—see [Section 3](SRE_Lexicon.md#section-3-embracing-risk-the-counter-intuitive-core-of-reliability-and-innovation) for risk management details.
+
+- **Explore More**: [SLO Basics](https://www.blameless.com/blog/sre-principles) | [Google SRE Book](https://sre.google/sre-book/part-II-principles/).
 
 ---
 
 ## Essential Tools and Technologies
 
-SREs rely on a robust toolkit. Here’s a curated list with practical uses:
+From [Part II: The Reliability Toolkit](SRE_Lexicon.md#part-ii-the-reliability-toolkit---the-what):
 
-### Monitoring & Observability
-- **[Prometheus](https://prometheus.io/)**: Real-time metrics—ideal for Kubernetes.
-- **[Grafana](https://grafana.com/)**: Beautiful dashboards from metrics.
-- **[Datadog](https://www.datadoghq.com/)**: All-in-one app and cloud monitoring.
-- **[ELK Stack](https://www.elastic.co/elastic-stack)**: Searchable, visual logs.
+- **Monitoring/Observability**: Prometheus (metrics), Grafana (dashboards), ELK (logs), OpenTelemetry (unified telemetry), eBPF (zero-code insights)—see [Section 17](SRE_Lexicon.md#section-17-the-evolution-of-observability-from-melt-to-the-power-of-ebpf-and-opentelemetry).
+- **Automation/IaC**: Terraform, Ansible, Jenkins.
+- **Incident Response**: PagerDuty, Slack.
+- **Containers/Orch**: Docker, Kubernetes, Helm.
+- **Cloud**: AWS, GCP, Azure.
+- **Advanced**: OPA for Policy as Code ([Section 18](SRE_Lexicon.md#section-18-policy-as-code-declarative-governance-in-kubernetes-with-open-policy-agent)), Chaos tools.
 
-### Automation & Infrastructure
-- **[Terraform](https://www.terraform.io/)**: Infrastructure as code (e.g., AWS setups).
-- **[Ansible](https://www.ansible.com/)**: Agentless server automation.
-- **[Jenkins](https://www.jenkins.io/)**: CI/CD pipelines for builds and deploys.
+**Pro Tip**: Automate toil with a 50% cap—[Section 6](SRE_Lexicon.md#section-6-the-war-on-toil-the-complete-lifecycle-from-identification-to-systemic-elimination).
 
-### Incident Response
-- **[PagerDuty](https://www.pagerduty.com/)**: On-call schedules and alerts.
-- **[Slack](https://slack.com/)**: Real-time incident team chat.
-
-### Containers & Orchestration
-- **[Docker](https://www.docker.com/)**: Consistent app packaging.
-- **[Kubernetes](https://kubernetes.io/)**: Scales and heals containers.
-- **[Helm](https://helm.sh/)**: Easy Kubernetes app installs.
-
-### Cloud Platforms
-- **[AWS](https://aws.amazon.com/)**: Robust cloud with CloudWatch.
-- **[Google Cloud](https://cloud.google.com/)**: SRE-friendly with Stackdriver.
-- **[Azure](https://azure.microsoft.com/)**: Enterprise cloud with DevOps tools.
-
-**Pro Tip**: Start small—set up Prometheus + Grafana at home! See [SRE Tools Guide](https://www.cortex.io/post/a-guide-to-the-best-sre-tools).
+- **Guide**: [SRE Tools](https://www.cortex.io/post/a-guide-to-the-best-sre-tools).
 
 ---
 
 ## Learning Resources
 
-Level up with these picks:
+- **Books**: [Site Reliability Engineering (Free)](https://sre.google/books/) | The DevOps Handbook | Seeking SRE.
+- **Courses**: [Coursera SRE Fundamentals](https://www.coursera.org/learn/site-reliability-engineering-slos) | [Udemy Kubernetes](https://www.udemy.com/course/kubernetes-for-sres/) | [HashiCorp Terraform](https://learn.hashicorp.com/terraform).
+- **Videos**: [SREcon](https://www.usenix.org/conferences/byname/184) | [Google SRE Channel](https://www.youtube.com/@GoogleSRE).
 
-### Books
-- **Site Reliability Engineering** (Google) - The SRE bible. [Free Online](https://sre.google/books/).
-- **The DevOps Handbook** - Links SRE to DevOps.
-- **Seeking SRE** - Real-world SRE stories.
-
-### Courses
-- **[Coursera SRE Fundamentals](https://www.coursera.org/learn/site-reliability-engineering-slos)**: Google’s intro.
-- **[Udemy Kubernetes Mastery](https://www.udemy.com/course/kubernetes-for-sres/)**: Hands-on containers.
-- **[HashiCorp Terraform](https://learn.hashicorp.com/terraform)**: Free IaC training.
-
-### Videos
-- **[SREcon Talks](https://www.usenix.org/conferences/byname/184)**: Expert insights.
-- **[Google SRE Channel](https://www.youtube.com/@GoogleSRE)**: Free tutorials.
+**Deep Dive**: [Part VI](SRE_Lexicon.md#part-vi-the-sre-learning-annex) with case studies and interviews.
 
 ---
 
 ## Certifications
 
-Certifications boost credibility, but hands-on experience is king. Top picks:
+1. **Certified Kubernetes Administrator (CKA)**: Kubernetes mastery. [CNCF](https://www.cncf.io/certification/cka/).
+2. **AWS Solutions Architect Professional**: Deep cloud architecture for SRE. [AWS](https://aws.amazon.com/certification/certified-solutions-architect-professional/).
+3. **Terraform Associate**: IaC essentials. [HashiCorp](https://www.hashicorp.com/certification/terraform-associate).
+4. **Google Cloud Professional DevOps Engineer**: SRE/DevOps on GCP. [Coursera Prep](https://www.coursera.org/professional-certificates/sre-devops-engineer-google-cloud).
 
-1. **Certified Kubernetes Administrator (CKA)**  
-   - Focus: Kubernetes management.  
-   - Why: Core SRE skill. [CNCF](https://www.cncf.io/certification/cka/).
-2. **AWS Certified DevOps Engineer**  
-   - Focus: Cloud ops and automation.  
-   - Why: Widely applicable. [AWS](https://aws.amazon.com/certification/certified-devops-engineer-professional/).
-3. **Terraform Associate**  
-   - Focus: Infrastructure automation.  
-   - Why: IaC essential. [HashiCorp](https://www.hashicorp.com/certification/terraform-associate).
-4. **Google Cloud Professional DevOps Engineer**  
-   - Focus: DevOps and SRE on Google Cloud.  
-   - Why: Validates skills in cloud-native reliability and automation.  
-   - **Preparation**: [Coursera: SRE and DevOps Engineer with Google Cloud](https://www.coursera.org/professional-certificates/sre-devops-engineer-google-cloud).
-
-**Note**: Pair certs with a portfolio (e.g., a Terraform-deployed app) for impact.
+**Note**: Focus on applicable skills; pair with projects.
 
 ---
 
 ## Interview Prep
 
-Ace your SRE interview with these tailored sections:
+From [Section 20](SRE_Lexicon.md#section-20-the-sre-interview-gauntlet-a-guide-to-demonstrating-craft-in-technical-challenges):
 
 ### Python/Go Proficiency
-SRE interviews often test coding skills in Python or Go for automation, tooling, and system tasks. Be ready!
 
-- **Python**:
-  - **Use Case**: Automate tasks (e.g., log parsing, API management).
-  - **Key Libraries**: `requests` (HTTP), `boto3` (AWS), `flask` (web apps).
-  - **Practice**: Solve problems on [LeetCode Python](https://leetcode.com/problemset/all/?topicSlugs=python).
-  - **Example Task**: Write a script to monitor disk space and alert via Slack.
-
-- **Go**:
-  - **Use Case**: Build efficient, concurrent tools (e.g., monitoring agents).
-  - **Strengths**: Performance, simplicity, concurrency with goroutines.
-  - **Practice**: Learn with [Go by Example](https://gobyexample.com/) or [Exercism Go](https://exercism.org/tracks/go).
-  - **Example Task**: Create a CLI tool to ping servers and log results.
-
-**Tip**: Build a small project (e.g., a system health checker) in Python or Go, then explain it in your interview—code on GitHub seals the deal.
+- **Python**: Libraries like requests, boto3; practice LeetCode.
+- **Go**: Goroutines for concurrency; Go by Example.
+- **Example**: Write a Prometheus exporter.
 
 ### System Design
-SRE interviews often include designing scalable, reliable systems. Master these:
 
-- **Key Components**: Load balancers, caches (e.g., Redis), databases (e.g., PostgreSQL), queues (e.g., RabbitMQ).
-- **Design Patterns**: Redundancy, failover, auto-scaling, circuit breakers.
-- **Common Questions**:
-  - "Design a monitoring system for 1M users."
-  - "How do you handle a traffic spike?"
-  - "Scale a microservice from 100 to 10,000 requests/second."
-- **Approach**:
-  1. Define requirements (e.g., uptime, latency).
-  2. Sketch components (e.g., CDN → Load Balancer → App → DB).
-  3. Address reliability (e.g., replicas, failover).
-  4. Optimize (e.g., caching, async tasks).
+- **Framework**: Define SLOs, architecture, failure modes—e.g., multi-region service with CAP trade-offs.
+- **Resources**: [System Design Primer](https://github.com/donnemartin/system-design-primer).
 
-- **Resources**: [System Design Primer](https://github.com/donnemartin/system-design-primer) | [SRE System Design Questions](https://www.interviewbit.com/sre-system-design-interview-questions/).
-
-**Pro Tip**: Practice drawing diagrams—whiteboard or paper—to explain your design clearly.
-
-### General Interview Tips
-- **Behavioral**: Use STAR (Situation, Task, Action, Result) for questions like "Tell me about a time you fixed an outage."
-- **Technical**: Brush up on Linux (e.g., `top`, `netstat`), networking (e.g., TCP/IP), and cloud basics.
-- **Mock Practice**: Try [Pramp](https://www.pramp.com/) or peer sessions.
-
-**More Resources**: [InterviewBit SRE](https://www.interviewbit.com/sre-interview-questions/) | [LeetCode SRE](https://leetcode.com/discuss/interview-question?currentTopic=SRE).
+**Tips**: STAR for behavioral; mock on Pramp.
 
 ---
 
 ## Best Practices
 
-Thrive as an SRE:
+From [Part IV](SRE_Lexicon.md#part-iv-sre-in-practice---the-daily-grind-and-the-grand-design):
 
-1. **Automate Toil**: Script repetitive tasks.
-2. **Monitor Proactively**: Catch issues before users do.
-3. **Postmortems**: Learn from failures, blame-free.
-4. **Error Budgets**: Protect reliability without blocking progress.
-5. **Runbooks**: Document fixes for consistency.
+- Sustainable on-call ([Section 11](SRE_Lexicon.md#section-11-the-on-call-crucible-architecting-sustainable-effective-and-humane-rotations)).
+- Proactive/reactive balance ([Section 12](SRE_Lexicon.md#section-12-the-proactive-reactive-equilibrium-from-firefighting-to-strategic-fire-prevention)).
+- PRR Checklist ([Section 13](SRE_Lexicon.md#section-13-the-gates-of-production-mastering-the-production-readiness-review-prr)).
 
-**More**: [Google SRE Practices](https://sre.google/sre-book/service-best-practices/).
+**PRR Checklist Excerpt**:
+
+| Category      | Checklist Item            | Status |
+| ------------- | ------------------------- | ------ |
+| Architecture  | System diagram documented | Done   |
+| Observability | SLOs defined              | To Do  |
+
+- **More**: [Google Practices](https://sre.google/sre-book/service-best-practices/).
 
 ---
 
 ## Career Growth
 
-From junior to leader:
-
-- **Skills**: Hone coding, communication, system design.
-- **Roles**: Progress to senior SRE, architect, or manager.
-- **Resources**: [SRE Career Path](https://www.infracloud.io/blogs/career-path-to-senior-sre/).
+From [Section 7](SRE_Lexicon.md#section-7-building-the-sre-organization-topologies-team-lifecycles-and-career-trajectories): Topologies (YBIYRI, Embedded SRE), lifecycles, IC ladders.
 
 ### DevSecOps as a Career Path
-**What is DevSecOps?**  
-DevSecOps integrates security into the DevOps process, making security a shared responsibility across development, operations, and security teams. It ensures that security is embedded from the start of the software development lifecycle.
 
-**Why Pursue DevSecOps?**  
-- **Growing Demand**: As security becomes a priority, DevSecOps roles are increasingly sought after.
-- **Versatile Skills**: Combines development, operations, and security expertise.
-- **Impact**: Helps deliver secure software faster by reducing vulnerabilities.
-- **Career Opportunities**: Leads to roles like DevSecOps Engineer, Security Architect, or Cloud Security Specialist.
+Embed security in SRE—tools: Snyk, OPA. Cert: CKS. High-demand for secure systems.
 
-**How to Get Started**:  
-1. Learn DevOps and SRE basics (see resources above).
-2. Study security concepts (e.g., secure coding, threat modeling).
-3. Explore tools like Snyk, OWASP ZAP, and Docker security features.
-4. Consider certifications like Certified Kubernetes Security Specialist (CKS).
-5. Build projects that integrate security into CI/CD pipelines.
-
-**Learn More**: [DevSecOps Guide](https://www.devsecops.org/) | [Google's Building Secure & Reliable Systems](https://sre.google/books/).
+- **Guide**: [DevSecOps](https://www.devsecops.org/) | [Google Secure Systems](https://sre.google/books/).
 
 ---
 
 ## Real-World Examples
 
-Learn from giants:
-- **Netflix**: Chaos Monkey tests resilience. [Netflix Blog](https://netflixtechblog.com/).
-- **Google**: Error budgets in practice. [SRE Book](https://sre.google/sre-book/).
-- **Slack**: Scaling with SRE. [Slack Engineering](https://slack.engineering/).
+From [Section 19](SRE_Lexicon.md#section-19-case-studies-in-failure-and-resilience-learning-from-major-industry-outages):
+
+- **CrowdStrike 2024**: Supply chain fragility.
+- **Cloudflare**: Dependency failures.
+- **Netflix/AWS**: Chaos for resilience.
+
+- **More**: Netflix Blog | Slack Engineering.
 
 ---
 
 ## Community Connections
 
-Join the SRE world:
 - **Slack**: [SRE Community](https://sre.slack.com/).
 - **Reddit**: [r/sre](https://www.reddit.com/r/sre/).
-- **Conferences**: [SREcon](https://www.usenix.org/srecon).
+- **Confs**: SREcon.
 
 ---
 
 ## Beginner’s Roadmap
 
-Start here:
-1. Learn Linux basics and Python.
-2. Study SRE concepts (SLOs, error budgets).
-3. Install Prometheus locally.
-4. Deploy a Docker app.
-5. Explore AWS/GCP free tiers.
-6. Automate with Terraform.
-7. Join SRE Slack.
+1. Linux/Python.
+2. Principles (Lexicon Part I).
+3. Prometheus setup.
+4. Docker/K8s.
+5. Terraform on free tier.
+6. Communities.
+7. Lexicon deep dive.
 
-**Full Guide**: [KodeKloud SRE](https://kodekloud.com/learning-path/site-reliability-engineer).
+- **Full**: [KodeKloud](https://kodekloud.com/learning-path/site-reliability-engineer).
 
 ---
 
 ## Stay Current
 
-Keep up:
-- **Blogs**: [Google SRE](https://sre.google/) | [AWS Blogs](https://aws.amazon.com/blogs/).
-- **Podcasts**: [SRE Weekly](https://sreweekly.com/).
-- **Twitter**: @SREWeekly, @GoogleSRE.
+- **Blogs**: Google SRE | AWS.
+- **Podcasts**: SRE Weekly.
+- **Twitter**: @SREWeekly.
 
 ---
 
 ## How to Contribute
 
-Make this better:
-1. Fork the repo.
-2. Add resources or fixes.
-3. Submit a pull request with details.
-
----
+Fork, add (e.g., new sections to Lexicon), PR. Let's grow this!
