@@ -1,6 +1,6 @@
 # Ultimate SRE Resource Hub
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/ultimate-sre-resource-hub?style=social) ![GitHub forks](https://img.shields.io/github/forks/yourusername/ultimate-sre-resource-hub?style=social) ![License](https://img.shields.io/github/license/yourusername/ultimate-sre-resource-hub) ![Last Commit](https://img.shields.io/github/last-commit/yourusername/ultimate-sre-resource-hub)
+![GitHub stars](https://img.shields.io/github/stars/diegospera/ultimate-sre-resource-hub?style=social) ![GitHub forks](https://img.shields.io/github/forks/diegospera/ultimate-sre-resource-hub?style=social) ![License](https://img.shields.io/github/license/diegospera/ultimate-sre-resource-hub) ![Last Commit](https://img.shields.io/github/last-commit/diegospera/ultimate-sre-resource-hub)
 
 Welcome to the **Ultimate SRE Resource Hub**, the definitive GitHub repository for mastering Site Reliability Engineering (SRE). This repo is designed to be a comprehensive, starred-worthy resource for SREs worldwide—packed with deep insights, practical tools, career guidance, and real-world examples. Whether you're starting out, transitioning from DevOps, or a principal SRE tackling hyperscale challenges, you'll find value here.
 
