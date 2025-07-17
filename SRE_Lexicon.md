@@ -1,4 +1,3 @@
-```markdown
 # The SRE Lexicon: An Architectural Blueprint for a Definitive Resource Hub
 
 ## Part I: The SRE Philosophy - The 'Why'
@@ -596,4 +595,3 @@ System design questions in SRE interviews probe a candidate's ability to think a
 **Observability and Deployment**: Briefly touch on how you would monitor the health of each region, how you would define SLOs for this complex system, and how you would deploy changes safely using a progressive, multi-region rollout strategy.
 
 By structuring their answers around SRE principles—starting with SLOs, designing for fault tolerance, making explicit trade-offs, and considering observability—candidates can demonstrate the holistic systems thinking that defines the craft of Site Reliability Engineering.
-```
